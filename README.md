@@ -1,61 +1,89 @@
-# note-taker# Note Taker
+# Note Taker
 
 ## Description
-Note Taker is a web application that allows users to write, save, and organize notes. The application uses an Express.js backend to handle data storage and retrieval from a `db.json` file. Users can view existing notes, create new ones, and interact with saved notes through a user-friendly interface.
+The Note Taker application is a web-based tool designed to help users write and save notes. The application features a user-friendly interface where users can create, view, and manage notes. The backend is built using Express.js and stores notes in a JSON file. The front end is already provided and seamlessly integrates with the Express.js backend to offer a smooth user experience.
 
-## User Story
-As a small business owner, I want to be able to write and save notes so that I can organize my thoughts and keep track of tasks I need to complete.
-
-## Acceptance Criteria
-- **Landing Page:** When opening the Note Taker, users are presented with a landing page that includes a link to the notes page.
-- **Notes Page:** Clicking the link takes users to a page with existing notes listed in the left-hand column and empty fields for entering a new note title and text in the right-hand column.
-- **Save Note:** After entering a new note title and text, users can click the "Save Note" button to save the note, which then appears in the left-hand column. The buttons will then disappear.
-- **Existing Notes:** Clicking an existing note displays it in the right-hand column, with a "New Note" button appearing in the navigation.
-- **New Note:** Clicking the "New Note" button clears the fields in the right-hand column and hides the button.
-
-## Getting Started
-1. **Backend Setup:**
-   - **File Storage:** The application uses `db.json` to store and retrieve notes.
-   - **HTML Routes:**
-     - `GET /notes` returns the `notes.html` file.
-     - `GET *` returns the `index.html` file.
-   - **API Routes:**
-     - `GET /api/notes` reads from `db.json` and returns all saved notes as JSON.
-     - `POST /api/notes` receives a new note, adds it to `db.json`, and returns the new note with a unique ID.
-     - **Bonus:** `DELETE /api/notes/:id` deletes a note based on its ID from `db.json`.
-
-2. **Frontend Setup:**
-   - The frontend includes HTML, CSS, and JavaScript to interact with the backend and manage notes.
-
-3. **Deployment:**
-   - The application is deployed on Render. The live URL is provided below.
+## Table of Contents
+- [Note Taker](#note-taker)
+  - [Description](#description)
+  - [Table of Contents](#table-of-contents)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [API Routes](#api-routes)
+    - [HTML Routes](#html-routes)
+    - [API Routes](#api-routes-1)
+  - [Tests](#tests)
+  - [Deployment](#deployment)
+  - [GitHub Repository](#github-repository)
+  - [Walkthrough Video](#walkthrough-video)
+  - [Contact](#contact)
+  - [Acknowledgements](#acknowledgements)
 
 ## Installation
-1. Clone the repository.
-2. Navigate to the project directory and install dependencies using `npm install`.
-3. Start the server with `node server.js` (or your specified entry point).
-4. Open the application in a web browser.
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/your-github-username/note-taker.git
+    ```
+2. Navigate into the project directory:
+    ```bash
+    cd note-taker
+    ```
+3. Install the dependencies:
+    ```bash
+    npm install
+    ```
+4. Start the server:
+    ```bash
+    npm start
+    ```
+5. Open your browser and navigate to `http://localhost:3001` to use the application.
 
-## License
-This application is licensed under the MIT License.
+## Usage
+1. Open the Note Taker application in your web browser.
+2. On the landing page, click the link to go to the notes page.
+3. On the notes page, you will see existing notes listed in the left-hand column and empty fields to enter a new note title and text in the right-hand column.
+4. Enter a new note title and text, then click "Save Note" to save the note.
+5. Click on any existing note in the left-hand column to view its details in the right-hand column.
+6. To create a new note, click the "New Note" button in the navigation.
 
-## Contribution
-Contributions are welcome! Please fork the repository and submit a pull request with your changes.
+## API Routes
+
+### HTML Routes
+- **GET /notes**: Returns the `notes.html` file.
+- **GET /**: Returns the `index.html` file.
+
+### API Routes
+- **GET /api/notes**: Reads the `db.json` file and returns all saved notes as JSON.
+- **POST /api/notes**: Receives a new note to save in the `db.json` file and returns the new note to the client. Each note is assigned a unique ID.
+- **DELETE /api/notes/:id**: Deletes a note by its ID from the `db.json` file.
 
 ## Tests
-Unit tests are provided for the backend routes. Run the tests using `npm test`.
+There are no automated tests included in this application. To test the application, manually verify that the following features work:
+- Viewing existing notes
+- Creating new notes
+- Saving notes
+- Viewing and selecting notes from the list
+- Clearing forms and adding new notes
 
-## Contact
-For any questions, suggestions, or further information, you can reach out via email at [fredony.ernesto@gmail.com](mailto:fredony.ernesto@gmail.com). You can also find me on GitHub at [fredonyernesto](https://github.com/fredonyernesto). I’d love to hear from you!
+## Deployment
+The Note Taker application has been deployed to Render. You can access the live application at the following URL:
 
-## Repository
-Check out the repository for this project [here](https://github.com/fredonyernesto/note-taker).
+[Deployed Note Taker Application](https://your-render-url.com)
 
-## Deployed Application
-The live application can be accessed [here](https://your-deployed-app-url.render.com).
+## GitHub Repository
+You can find the source code for this application on GitHub:
 
-## Screenshots
-![Note Taker Screenshot](link-to-screenshot.png)
+[Note Taker GitHub Repository](https://github.com/your-github-username/note-taker)
 
 ## Walkthrough Video
-A walkthrough video demonstrating the functionality of the Note Taker application and passing tests can be viewed [here](https://link-to-your-video).
+A walkthrough video demonstrating the functionality of the Note Taker application can be found here:
+
+[Walkthrough Video](https://your-video-url.com)
+
+## Contact
+For any questions or issues, please contact [your-email@example.com](mailto:your-email@example.com).
+
+## Acknowledgements
+- This project utilizes the Express.js framework for building the backend.
+- The application stores notes in a JSON file using the `fs` module.
+- The front end is already created and is integrated with the Express.js backend.
